@@ -1,0 +1,19 @@
+﻿@model CatViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Animal info section</h1>
+
+
+@using(Html.BeginForm("GetAnimalInfo", "AnimalEngine", FormMethod.Post))
+{
+    <input type="text" name="animalName"/><br />
+    <input type="submit" value="send to the controller"/><br />
+}
+
+<label>Updated cat name: @Model.Name</label><br />
+<label>What does cat say: @Model.WhatDoesCatSay</label>
