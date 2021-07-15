@@ -55,8 +55,8 @@ namespace AnimalEngine.UI.Controllers
 
             //using ( var context = new AnimalEngineDBContext () )
             //{
-            //    context.Add ( catModel );
-            //    context.SaveChanges ();
+            //    context.Add(catModel);
+            //    context.SaveChanges();
             //}
 
             AnimalEngineActions animalActions = new AnimalEngineActions();

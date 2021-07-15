@@ -67,7 +67,7 @@ namespace AnimalEngine.UI
 
             using ( var context = new AnimalEngineDBContext () )
             {
-                context.Database.EnsureCreated ();
+                context.Database.EnsureCreated();
             }
         }
     }
