@@ -1,5 +1,6 @@
 ﻿using AnimalEngine.BLL;
 using AnimalEngine.Entity;
+using AnimalEngine.UI.Context;
 using AnimalEngine.UI.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,8 @@ namespace AnimalEngine.UI.Controllers
 
         public IActionResult Index()
         {
-            CatViewModel catModel = new CatViewModel()
+
+            CatViewModel catModel = new CatViewModel ()
             {
                 Id = 1,
                 Name = "Lucky",
@@ -36,7 +38,7 @@ namespace AnimalEngine.UI.Controllers
         {
             CatViewModel catModel = new CatViewModel()
             {
-                Id = 2,
+                //Id = 2,
                 Name = animalName,
                 NameOfOwner = "John"
             };
@@ -50,9 +52,16 @@ namespace AnimalEngine.UI.Controllers
             //    NameOfOwner = catModel.NameOfOwner
             //};
 
+
+            //using ( var context = new AnimalEngineDBContext () )
+            //{
+            //    context.Add ( catModel );
+            //    context.SaveChanges ();
+            //}
+
             AnimalEngineActions animalActions = new AnimalEngineActions();
 
-            catModel.WhatDoesCatSay = animalActions.getCatTalking(catdto);
+            catModel.WhatDoesCatSay = animalActions.GetCatTalking(catdto);
 
             return View(catModel);
         }

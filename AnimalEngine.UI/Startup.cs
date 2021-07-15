@@ -1,3 +1,4 @@
+using AnimalEngine.UI.Context;
 using AnimalEngine.UI.Mappings;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
@@ -63,6 +64,11 @@ namespace AnimalEngine.UI
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            using ( var context = new AnimalEngineDBContext () )
+            {
+                context.Database.EnsureCreated ();
+            }
         }
     }
 }
